@@ -1,0 +1,71 @@
+  <div class="container">
+      <div style="margin: 0 auto;" class="col-12 col-md-6 col-lg-5 p-5 customborder">
+        <h3 class="text center p-3">Registration portal</h3>
+        <%- include ('../partials/messages') %> 
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label for="bname">Business name: </label>
+            <input 
+            type="text" 
+            name="bname" 
+            id="bname" 
+            class="form-control" 
+            autocomplete="off" 
+            required 
+            value="<%= typeof bname !='undefined' ? bname: '' %> ">
+        </div>
+        <div class="form-group">
+          <label for="phoneno">Phone number: </label>
+          <input 
+          type="tel" 
+          name="phoneno" 
+          id="phoneno" 
+          class="form-control"
+          maxlength="11"
+          minlength="11" 
+          autocomplete="off" 
+          required 
+          value="<%= typeof phoneno !='undefined' ? phoneno: '' %> ">
+        </div class="form-group">
+        <div class="form-group">
+          <label for="addr">Office address: </label>
+          <input 
+          type="text" 
+          name="addr" id="addr"
+          class="form-control" 
+          autocomplete="off" 
+          required 
+          value="<%= typeof addr !='undefined' ? addr: '' %> ">
+        </div>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input 
+          type="password" 
+          input="password" 
+          name="password" 
+          id="password" 
+          class="form-control" 
+          autocomplete="off" 
+          value="<%= typeof password != 'undefined' ? password: '' %> " 
+          required>
+        </div>
+        <div class="form-group">
+          <label for="confirmpassword">Confirm Password: </label>
+          <input 
+          type="password" 
+          input="confirmpassword" 
+          name="confirmpassword" 
+          id="confirmpassword" 
+          class="form-control" 
+          autocomplete="off"
+          value="<%= typeof confirmpassword != 'undefined' ? confirmpassword: '' %> " 
+          required>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-block btn-outline-primary" value="Register">
+        </div>
+        <p>Already Registered? <a class="card-link" href="/login">Login here</a></p>
+        </form>
+      </div>
+  </div>
+
